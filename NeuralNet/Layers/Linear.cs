@@ -1,10 +1,11 @@
 ﻿using MathNet.Numerics.Distributions;
 using MathNet.Numerics.LinearAlgebra;
+
 // unnecessary warning on uninitialized fields
-#pragma warning disable CS8618  
+#pragma warning disable CS8618
 
 
-namespace neural.Layers;
+namespace NeuralNet.Layers;
 
 public class Linear
 {
@@ -18,6 +19,20 @@ public class Linear
         InitializeWeightsAndBiases(inputCount, outputCount);
         _activationFunction = ActivationFunctions.Sigmoid;
         _learningRate = 0.1;
+    }
+
+    public Linear(int inputCount, int outputCount, ActivationFunction activationFunction)
+    {
+        InitializeWeightsAndBiases(inputCount, outputCount);
+        _activationFunction = activationFunction;
+        _learningRate = 0.1;
+    }
+    
+    public Linear(int inputCount, int outputCount, float learningRate)
+    {
+        InitializeWeightsAndBiases(inputCount, outputCount);
+        _activationFunction = ActivationFunctions.Sigmoid;
+        _learningRate = learningRate;
     }
 
     public Linear(int inputCount, int outputCount, ActivationFunction activationFunction, float learningRate)
