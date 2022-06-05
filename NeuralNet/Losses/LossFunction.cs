@@ -57,7 +57,7 @@ public static class LossFunctions
 
         var n = actual.Count;
         var diff = actual - predicted;
-        var output = (2 + diff) / n;
+        var output = (2 * diff) / n;
         return output;
     }
 }
