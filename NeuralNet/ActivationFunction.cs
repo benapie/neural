@@ -1,6 +1,6 @@
 ﻿using MathNet.Numerics.LinearAlgebra;
 
-namespace neural;
+namespace NeuralNet;
 
 public struct ActivationFunction
 {

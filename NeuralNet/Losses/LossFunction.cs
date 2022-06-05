@@ -1,6 +1,8 @@
 ﻿using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Double;
 
-namespace neural;
+namespace NeuralNet.LossFunction;
+
 
 public struct LossFunction
 {
