@@ -27,7 +27,7 @@ public class Linear
         _activationFunction = activationFunction;
         _learningRate = 0.1;
     }
-    
+
     public Linear(int inputCount, int outputCount, float learningRate)
     {
         InitializeWeightsAndBiases(inputCount, outputCount);
@@ -42,6 +42,24 @@ public class Linear
         _learningRate = learningRate;
     }
 
+
+    public int InputCount => _weights.ColumnCount;
+    public int OutputCount => _weights.RowCount;
+
+    public double LearningRate
+    {
+        get => _learningRate;
+        set
+        {
+            if (value is < 0 or > 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(value), "Must be between 0 and 1.");
+            }
+
+            _learningRate = value;
+        }
+    }
+
     private void InitializeWeightsAndBiases(int inputCount, int outputCount)
     {
         var matrixBuilder = Matrix<double>.Build;
@@ -51,7 +69,4 @@ public class Linear
         var vectorBuilder = Vector<double>.Build;
         _biases = vectorBuilder.Dense(outputCount, 0);
     }
-
-    public int InputCount => _weights.ColumnCount;
-    public int OutputCount => _weights.RowCount;
 }

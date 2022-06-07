@@ -24,7 +24,7 @@ public class MSEGradShould
     }
 
     [Fact]
-    public void MSELoss_EmptyInputs_AssertArgumentError()
+    public void MSELoss_EmptyInputs_ThrowArgumentError()
     {
         var vec = Builder.DenseOfArray(Array.Empty<double>());
 
@@ -32,7 +32,7 @@ public class MSEGradShould
     }
 
     [Fact]
-    public void MSELoss_UnequalSize_AssertArgumentError()
+    public void MSELoss_UnequalSize_ThrowArgumentError()
     {
         var vec1 = Builder.DenseOfArray(new[] { 1.0, 2.0 });
         var vec2 = Builder.DenseOfArray(new[] { 1.0, 2.0, 3.0, 4.0 });

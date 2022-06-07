@@ -7,7 +7,7 @@ public class SigmoidActivationShould
     private static readonly VectorBuilder<double> Builder = Vector<double>.Build;
 
     [Fact]
-    public void SigmoidActivation_EmptyInputs_AssertArgumentError()
+    public void SigmoidActivation_EmptyInputs_ThrowArgumentError()
     {
         var vec = Builder.DenseOfArray(Array.Empty<double>());
 
