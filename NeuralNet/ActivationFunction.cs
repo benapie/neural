@@ -52,11 +52,19 @@ public static class ActivationFunctions
 
     private static Vector<double> SigmoidVec(IList<double> x)
     {
+        if (x.Count == 0)
+        {
+            throw new ArgumentException("Input is empty.");
+        }
         return MapToVec(x, SigmoidBase);
     }
 
     private static Vector<double> SigmoidDerVec(IList<double> x)
     {
+        if (x.Count == 0)
+        {
+            throw new ArgumentException("Input is empty.");
+        }
         return MapToVec(x, SigmoidDerBase);
     }
 }

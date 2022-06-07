@@ -19,17 +19,22 @@ public static class LossFunctions
 {
     public static readonly LossFunction MSE = new LossFunction(MSEBase, MSEGradBase);
 
-    private static bool AreSameSize(ICollection<double> x, ICollection<double> y)
+    private static bool IsEmpty(ICollection<double> x)
     {
-        return x.Count == y.Count;
+        return x.Count == 0;
     }
 
     private static double MSEBase(Vector<double> actual, Vector<double> predicted)
     {
-        if (!AreSameSize(actual, predicted))
+        if (actual.Count != predicted.Count)
         {
             throw new ArgumentException(
                 $"Inputs have length {actual.Count} and {predicted.Count}, but they should match.");
+        }
+
+        if (IsEmpty(actual))
+        {
+            throw new ArgumentException($"Inputs are empty.");
         }
 
         var n = actual.Count;
@@ -47,10 +52,16 @@ public static class LossFunctions
 
     private static Vector<double> MSEGradBase(Vector<double> actual, Vector<double> predicted)
     {
-        if (!AreSameSize(actual, predicted))
+        if (actual.Count != predicted.Count)
         {
             throw new ArgumentException(
                 $"Inputs have length {actual.Count} and {predicted.Count}, but they should match.");
+        }
+        
+        
+        if (IsEmpty(actual))
+        {
+            throw new ArgumentException($"Inputs are empty.");
         }
 
         var n = actual.Count;

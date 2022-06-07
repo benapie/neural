@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNet", "NeuralNet\NeuralNet.csproj", "{B23303BA-C668-477D-97A8-627D32367944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetTests", "NeuralNetTests\NeuralNetTests.csproj", "{F7F61713-55FF-45D1-A60D-7FDE847C5676}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNet.Tests", "NeuralNet.Tests\NeuralNet.Tests.csproj", "{F7F61713-55FF-45D1-A60D-7FDE847C5676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
